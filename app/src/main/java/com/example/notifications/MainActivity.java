@@ -62,7 +62,8 @@ public class MainActivity extends AppCompatActivity {
                         .setAutoCancel(true)
                         .setContentIntent(pendingContentIntent)
                         .addAction(toastAction)
-                        .addAction(dismissAction);
+                        .addAction(dismissAction)
+                        .setStyle(new Notification.BigTextStyle().bigText(getResources().getString(R.string.notification_text)));
 
                 NotificationManagerCompat managerCompat = NotificationManagerCompat.from(MainActivity.this);
                 managerCompat.notify(1, builder.build());
